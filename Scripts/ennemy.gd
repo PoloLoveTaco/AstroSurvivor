@@ -16,6 +16,10 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	if _target:
-		
 		look_at(_target.global_position)
 		position = position.move_toward(_target.global_position, speed * delta)
+
+func take_damage(amount: float):
+	health -= amount
+	if health <= 0:
+		queue_free()

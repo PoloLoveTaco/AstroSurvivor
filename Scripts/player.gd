@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const BULLET = preload("uid://7vwsap1y2sw5")
+const BULLET = preload("res://Scenes/bullet.tscn")
 
 @export_category("Current stats")
 @export var health: float = 100
