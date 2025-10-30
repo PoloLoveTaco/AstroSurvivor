@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const BULLET = preload("uid://7vwsap1y2sw5")
+
 @export_category("Current stats")
 @export var health: float = 100
 @export var speed: float = 400
@@ -27,4 +29,7 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func shoot():
-	print("pan pan")
+	var b = BULLET.instantiate()
+	b.global_position = global_position
+	b.velocity = (get_global_mouse_position() - global_position).normalized() * b.speed
+	get_tree().current_scene.add_child(b)
