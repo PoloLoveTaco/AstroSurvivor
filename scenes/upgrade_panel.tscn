@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtq8ecyqf4oug"]
+[gd_scene load_steps=5 format=3 uid="uid://dtq8ecyqf4oug"]
+
+[ext_resource type="Texture2D" uid="uid://ca5vysmpmgspt" path="res://icon.svg" id="1_lev6e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lev6e"]
 content_margin_left = 0.0
@@ -17,7 +19,19 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.63529414)
+bg_color = Color(0, 0, 0, 0.42745098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ql3a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -74,16 +88,109 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_x8o43")
-text = "1"
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ql3a")
+
+[node name="Icon" type="TextureRect" parent="Panel/Upgrades/Upgrade1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -57.5
+offset_right = 124.0
+offset_bottom = 57.5
+grow_vertical = 2
+texture = ExtResource("1_lev6e")
+expand_mode = 1
+
+[node name="Titre" type="Label" parent="Panel/Upgrades/Upgrade1"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 9.0
+offset_right = 180.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 24
+text = "Titre"
+
+[node name="Description" type="Label" parent="Panel/Upgrades/Upgrade1"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 44.86
+offset_right = 639.0
+offset_bottom = 117.33003
+text = "Ici, description"
+autowrap_mode = 2
 
 [node name="Upgrade2" type="Button" parent="Panel/Upgrades"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_x8o43")
-text = "2"
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ql3a")
+
+[node name="Icon" type="TextureRect" parent="Panel/Upgrades/Upgrade2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -57.5
+offset_right = 124.0
+offset_bottom = 57.5
+grow_vertical = 2
+texture = ExtResource("1_lev6e")
+expand_mode = 1
+
+[node name="Titre" type="Label" parent="Panel/Upgrades/Upgrade2"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 9.0
+offset_right = 180.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 24
+text = "Titre"
+
+[node name="Description" type="Label" parent="Panel/Upgrades/Upgrade2"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 44.86
+offset_right = 639.0
+offset_bottom = 117.33003
+text = "Ici, description"
+autowrap_mode = 2
 
 [node name="Upgrade3" type="Button" parent="Panel/Upgrades"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_x8o43")
-text = "3"
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ql3a")
+
+[node name="Icon" type="TextureRect" parent="Panel/Upgrades/Upgrade3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -57.5
+offset_right = 124.0
+offset_bottom = 57.5
+grow_vertical = 2
+texture = ExtResource("1_lev6e")
+expand_mode = 1
+
+[node name="Titre" type="Label" parent="Panel/Upgrades/Upgrade3"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 9.0
+offset_right = 180.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 24
+text = "Titre"
+
+[node name="Description" type="Label" parent="Panel/Upgrades/Upgrade3"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 44.86
+offset_right = 639.0
+offset_bottom = 117.33003
+text = "Ici, description"
+autowrap_mode = 2
