@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmfh1imb32ewl"]
+[gd_scene load_steps=5 format=3 uid="uid://dmfh1imb32ewl"]
 
 [ext_resource type="Script" uid="uid://7brapxhwtppo" path="res://Scripts/Enemies/scout_enemy.gd" id="1_qeg1l"]
 [ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_qeg1l"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://Scenes/damage_popup.tscn" id="2_wlj0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
 size = Vector2(32, 32)
@@ -12,6 +13,7 @@ gravity_scale = 0.0
 script = ExtResource("1_qeg1l")
 health = 5.0
 speed = 150.0
+damage_popup_scene = ExtResource("2_wlj0x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)

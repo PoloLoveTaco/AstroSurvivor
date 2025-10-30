@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://crjvq200hl46w"]
+[gd_scene load_steps=5 format=3 uid="uid://crjvq200hl46w"]
 
 [ext_resource type="Script" uid="uid://dlbsv1xl8hyea" path="res://Scripts/Enemies/normal_enemy.gd" id="1_tnwmr"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://Scenes/damage_popup.tscn" id="2_c62eb"]
 [ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_tnwmr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
@@ -10,6 +11,7 @@ size = Vector2(32, 32)
 mass = 30.0
 gravity_scale = 0.0
 script = ExtResource("1_tnwmr")
+damage_popup_scene = ExtResource("2_c62eb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 0, 0.96862745)

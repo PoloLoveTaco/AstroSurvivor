@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://biau0cpxxgby6"]
+[gd_scene load_steps=5 format=3 uid="uid://biau0cpxxgby6"]
 
 [ext_resource type="Script" uid="uid://1ne80g5fmfma" path="res://Scripts/Enemies/cruiser_enemy.gd" id="1_57jn1"]
 [ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_57jn1"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://Scenes/damage_popup.tscn" id="2_nkxxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
 size = Vector2(32, 32)
@@ -13,6 +14,7 @@ script = ExtResource("1_57jn1")
 health = 50.0
 speed = 80.0
 damage = 10.0
+damage_popup_scene = ExtResource("2_nkxxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.4652934, 0.8988092, 0.9999997, 0.96862745)

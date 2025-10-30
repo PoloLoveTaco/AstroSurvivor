@@ -9,6 +9,9 @@ class_name Enemy
 @export_category("Max stats")
 @export var max_health: float = 10
 
+@export_category("Others")
+@export var damage_popup_scene: PackedScene
+
 var _target
 
 func _ready() -> void:
@@ -21,5 +24,16 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(amount: float):
 	health -= amount
+	_spawn_damage_popup(amount)
 	if health <= 0:
 		queue_free()
+
+func _spawn_damage_popup(amount: float) -> void:
+	if damage_popup_scene == null:
+		return
+	var p: Node2D = damage_popup_scene.instantiate()
+	p.global_position = global_position + Vector2(0, -8)
+
+	p.text = String.num(amount, 1)
+
+	get_parent().add_child(p)

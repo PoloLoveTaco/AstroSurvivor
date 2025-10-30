@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=2 format=3 uid="uid://cj6jv3yipgcta"]
+
+[ext_resource type="Script" uid="uid://b2prupq5kb6w4" path="res://Ressources/wave_data.gd" id="1_2nlk6"]
+
+[resource]
+script = ExtResource("1_2nlk6")
+nb_scout_enemy = 3
+nb_cruiser_enemy = 3
+wave_time_max = 1.0
+metadata/_custom_type_script = "uid://b2prupq5kb6w4"
