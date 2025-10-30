@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://b8kofflg7w03l"]
+[gd_scene load_steps=22 format=4 uid="uid://b8kofflg7w03l"]
 
 [ext_resource type="PackedScene" uid="uid://la12skvujt13" path="res://Scenes/player.tscn" id="1_6ulkd"]
 [ext_resource type="Script" path="res://Scripts/test_map.gd" id="1_bdpbv"]
-[ext_resource type="PackedScene" uid="uid://crjvq200hl46w" path="res://Scenes/NormalEnemy.tscn" id="2_fn2sa"]
 [ext_resource type="Texture2D" uid="uid://dk4gf0yvg0jml" path="res://Assets/space_001.png" id="3_57l66"]
 [ext_resource type="Script" uid="uid://x3avyum83o50" path="res://Scripts/enemy_spawner.gd" id="4_gbc2j"]
+[ext_resource type="Script" uid="uid://bt54pkxigyp24" path="res://Ressources/zone_data.gd" id="5_leqta"]
+[ext_resource type="Script" uid="uid://b2prupq5kb6w4" path="res://Ressources/wave_data.gd" id="6_kr5nf"]
+[ext_resource type="Resource" uid="uid://cbvweicjjfw64" path="res://Ressources/normal_wave.tres" id="7_wc3g0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p21b5"]
 texture = ExtResource("3_57l66")
@@ -18,6 +20,66 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_p21b5")
 
+[sub_resource type="Resource" id="Resource_v78cv"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_o5igy"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_vi334"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_6j8u5"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_xfoml"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_ahe7h"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_30gp1"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_ltvoi"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_5nkue"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_l6km1"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_pvenh"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
+[sub_resource type="Resource" id="Resource_2627l"]
+script = ExtResource("5_leqta")
+waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
+metadata/_custom_type_script = "uid://bt54pkxigyp24"
+
 [node name="Test Map" type="Node2D"]
 script = ExtResource("1_bdpbv")
 
@@ -30,7 +92,4 @@ position = Vector2(182, 172)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("4_gbc2j")
-enemy_scene = ExtResource("2_fn2sa")
-spawn_every = 1.0
-min_spawn_distance = 1000.0
-max_spawn_distance = 2000.0
+zones = Array[ExtResource("5_leqta")]([SubResource("Resource_v78cv"), SubResource("Resource_o5igy"), SubResource("Resource_vi334"), SubResource("Resource_6j8u5"), SubResource("Resource_xfoml"), SubResource("Resource_ahe7h"), SubResource("Resource_30gp1"), SubResource("Resource_ltvoi"), SubResource("Resource_5nkue"), SubResource("Resource_l6km1"), SubResource("Resource_pvenh"), SubResource("Resource_2627l")])
