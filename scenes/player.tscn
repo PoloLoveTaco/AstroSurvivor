@@ -22,7 +22,7 @@ content_margin_bottom = 2.0
 bg_color = Color(0, 0.9411765, 0.6313726, 1)
 corner_detail = 6
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://b8kofflg7w03l"]
 
-[ext_resource type="PackedScene" uid="uid://la12skvujt13" path="res://scenes/player.tscn" id="1_6ulkd"]
-[ext_resource type="PackedScene" uid="uid://crjvq200hl46w" path="res://scenes/ennemy.tscn" id="2_fn2sa"]
+[ext_resource type="PackedScene" uid="uid://la12skvujt13" path="res://Scenes/player.tscn" id="1_6ulkd"]
+[ext_resource type="PackedScene" uid="uid://crjvq200hl46w" path="res://Scenes/ennemy.tscn" id="2_fn2sa"]
 [ext_resource type="Texture2D" uid="uid://dk4gf0yvg0jml" path="res://Assets/space_001.png" id="3_57l66"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p21b5"]
