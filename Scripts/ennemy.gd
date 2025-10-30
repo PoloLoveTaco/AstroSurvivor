@@ -1,6 +1,12 @@
-extends CharacterBody2D
+extends RigidBody2D
 
-@export var speed = 200
+@export_category("Current stats")
+@export var health: float = 10
+@export var speed: float = 100
+@export var damage: float = 5
+
+@export_category("Max stats")
+@export var max_health: float = 10
 
 var _target
 
@@ -9,6 +15,6 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	if _target:
-		var direction = (_target.global_position - global_position).normalized()
-		velocity = direction * speed
-		move_and_slide()
+		
+		look_at(_target.global_position)
+		position = position.move_toward(_target.global_position, speed * delta)

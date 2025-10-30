@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
 size = Vector2(128, 128)
 
-[node name="Ennemy" type="CharacterBody2D"]
+[node name="Enemy" type="RigidBody2D" groups=["Enemy"]]
+mass = 30.0
+gravity_scale = 0.0
 script = ExtResource("1_gvr15")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
