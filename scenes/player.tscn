@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://la12skvujt13"]
 
-[ext_resource type="Texture2D" uid="uid://ca5vysmpmgspt" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c64qrqd1wejpr" path="res://Scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_cvnsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
-size = Vector2(128, 128)
+size = Vector2(32, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2els"]
 content_margin_left = 2.0
@@ -26,7 +26,7 @@ corner_detail = 6
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3vyb7")
+texture = ExtResource("2_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u8vuu")

@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Enemy
 
 @export_category("Current stats")
 @export var health: float = 10
