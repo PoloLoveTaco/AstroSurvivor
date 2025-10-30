@@ -1,6 +1,18 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export_category("Current stats")
+@export var health: float = 100
+@export var speed: float = 400
+@export var xp: float = 0
+
+@export_category("Max stats")
+@export var max_health: float = 100
+@export var max_xp: float = 10
+
+@onready var progress_bar: ProgressBar = $CanvasLayer/UI/ProgressBar
+
+func _ready() -> void:
+	progress_bar.value = health / max_health * 100
 
 func get_input():
 	look_at(get_global_mouse_position())
