@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://b8kofflg7w03l"]
 
-[ext_resource type="PackedScene" uid="uid://la12skvujt13" path="res://scenes/player.tscn" id="1_6ulkd"]
-[ext_resource type="PackedScene" uid="uid://crjvq200hl46w" path="res://scenes/ennemy.tscn" id="2_fn2sa"]
+[ext_resource type="PackedScene" uid="uid://la12skvujt13" path="res://Scenes/player.tscn" id="1_6ulkd"]
+[ext_resource type="PackedScene" uid="uid://crjvq200hl46w" path="res://Scenes/ennemy.tscn" id="2_fn2sa"]
 [ext_resource type="Texture2D" uid="uid://dk4gf0yvg0jml" path="res://Assets/space_001.png" id="3_57l66"]
 [ext_resource type="Script" uid="uid://x3avyum83o50" path="res://Scripts/enemy_spawner.gd" id="4_gbc2j"]
 
@@ -26,8 +26,9 @@ tile_set = SubResource("TileSet_fn2sa")
 [node name="Player" parent="." instance=ExtResource("1_6ulkd")]
 position = Vector2(182, 172)
 
-[node name="Ennemy" parent="." instance=ExtResource("2_fn2sa")]
-position = Vector2(740, 336)
-
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("4_gbc2j")
+enemy_scene = ExtResource("2_fn2sa")
+spawn_every = 1.0
+min_spawn_distance = 1000.0
+max_spawn_distance = 2000.0
