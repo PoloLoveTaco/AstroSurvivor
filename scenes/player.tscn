@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://la12skvujt13"]
+[gd_scene load_steps=8 format=3 uid="uid://la12skvujt13"]
 
 [ext_resource type="Script" uid="uid://c64qrqd1wejpr" path="res://Scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_cvnsp"]
@@ -20,6 +20,22 @@ content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
 bg_color = Color(0, 0.9411765, 0.6313726, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlg0r"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 1, 1, 1)
 corner_detail = 6
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -46,7 +62,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/UI"]
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -58,10 +74,21 @@ theme_override_styles/background = SubResource("StyleBoxFlat_g2els")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qhqgy")
 show_percentage = false
 
-[node name="Label" type="Label" parent="CanvasLayer/UI"]
+[node name="XpBar" type="ProgressBar" parent="CanvasLayer/UI"]
 layout_mode = 1
-offset_right = 123.0
-offset_bottom = 23.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_dqkch")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qlg0r")
+show_percentage = false
+
+[node name="WaveNum" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 1
+offset_top = 40.0
+offset_right = 183.0
+offset_bottom = 74.00012
 theme_override_font_sizes/font_size = 24
 text = "WAVE NUMBER:"
 

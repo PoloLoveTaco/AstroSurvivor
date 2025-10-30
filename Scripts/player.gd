@@ -12,11 +12,15 @@ const BULLET = preload("res://Scenes/bullet.tscn")
 @export var max_health: float = 100
 @export var max_xp: float = 10
 
-@onready var progress_bar: ProgressBar = $CanvasLayer/UI/ProgressBar
+@onready var health_bar: ProgressBar = $CanvasLayer/UI/HealthBar
+@onready var xp_bar: ProgressBar = $CanvasLayer/UI/XpBar
 @onready var shooting_timer: Timer = $"Shooting Timer"
 
 func _ready() -> void:
-	progress_bar.value = health / max_health * 100
+	health_bar.max_value = max_health
+	health_bar.value = health
+	xp_bar.max_value = max_xp
+	xp_bar.value = xp
 	shooting_timer.wait_time = seconds_between_attacks
 	shooting_timer.start()
 
