@@ -12,6 +12,9 @@ extends Node2D
 @export var current_zone_index: int = 0
 @export var auto_advance_zone: bool = true
 
+@onready var zone_label = $"../CanvasLayer/ZoneLabel"
+@onready var wave_label = $"../CanvasLayer/WaveLabel"
+
 var _rng := RandomNumberGenerator.new()
 var _player: Node2D
 
@@ -25,15 +28,14 @@ func _ready() -> void:
 	_rng.randomize()
 	var players := get_tree().get_nodes_in_group("Player")
 	if players.is_empty():
-		push_error("EnemySpawner: aucun node dans le groupe 'Player'.")
 		return
 	_player = players[0]
 
 	if zones.is_empty():
-		push_warning("EnemySpawner: 'zones' est vide. Configure des ZoneData dans l’inspecteur.")
 		return
 
 	_start_zone(current_zone_index)
+	zone_label.text = "Zone: " + str(current_zone_index + 1) + "/12"
 
 func _start_zone(zone_idx: int) -> void:
 	if zone_idx < 0 or zone_idx >= zones.size():
@@ -55,6 +57,8 @@ func _try_start_next_wave() -> void:
 			_check_end_zone_periodically()
 		return
 
+	wave_label.text = "Wave: " + str(_current_wave_idx + 1) + "/" + str(zone.waves.size())
+	
 	var wave_data: WaveData = zone.waves[_current_wave_idx]
 	var wave_id := _next_wave_id
 	_next_wave_id += 1
@@ -90,8 +94,9 @@ func _schedule_wave_watchdog(wave_id: int, wave_time_max: float) -> void:
 	)
 
 func _delay_call(delay_sec: float, f: Callable) -> void:
-	var t := get_tree().create_timer(max(0.0, delay_sec))
-	t.timeout.connect(f)
+	if get_tree():
+		var t := get_tree().create_timer(max(0.0, delay_sec))
+		t.timeout.connect(f)
 
 func _spawn_batch(wave_id: int, scene: PackedScene, count: int) -> void:
 	if scene == null or _player == null or count <= 0 or not _waves.has(wave_id):
@@ -152,6 +157,7 @@ func _try_finish_zone_if_needed() -> void:
 		if auto_advance_zone:
 			current_zone_index += 1
 			if current_zone_index < zones.size():
+				zone_label.text = "Zone: " + str(current_zone_index + 1) + "/12"
 				_start_zone(current_zone_index)
 			else:
 				emit_signal_safe("all_zones_completed")

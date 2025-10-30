@@ -84,12 +84,4 @@ theme_override_styles/background = SubResource("StyleBoxFlat_dqkch")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qlg0r")
 show_percentage = false
 
-[node name="WaveNum" type="Label" parent="CanvasLayer/UI"]
-layout_mode = 1
-offset_top = 40.0
-offset_right = 183.0
-offset_bottom = 74.00012
-theme_override_font_sizes/font_size = 24
-text = "WAVE NUMBER:"
-
 [connection signal="timeout" from="Shooting Timer" to="." method="_on_shooting_timer_timeout"]

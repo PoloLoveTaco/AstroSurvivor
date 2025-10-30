@@ -25,6 +25,10 @@ window/size/viewport_height=1080
 Player=""
 Enemy=""
 
+[gui]
+
+theme/custom_font="uid://d0xnk3fix6blk"
+
 [input]
 
 up={
