@@ -33,6 +33,7 @@ func shoot():
 	var b = BULLET.instantiate()
 	b.global_position = global_position
 	b.velocity = (get_global_mouse_position() - global_position).normalized() * b.speed
+	b.look_at(get_global_mouse_position())
 	get_tree().current_scene.add_child(b)
 
 

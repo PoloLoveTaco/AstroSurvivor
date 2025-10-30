@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://7vwsap1y2sw5"]
+[gd_scene load_steps=5 format=3 uid="uid://daq7wwp70i6yn"]
 
-[ext_resource type="Texture2D" uid="uid://ca5vysmpmgspt" path="res://icon.svg" id="1_mkf8s"]
 [ext_resource type="Script" uid="uid://c5a88h0q4icmi" path="res://Scripts/bullet.gd" id="1_y25gk"]
+[ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_oduel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf8s"]
-size = Vector2(64, 64)
+size = Vector2(16, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y25gk"]
-size = Vector2(64, 64)
+size = Vector2(16, 6)
 
 [node name="Bullet" type="CharacterBody2D"]
 collision_layer = 2
@@ -15,8 +15,9 @@ collision_mask = 2
 script = ExtResource("1_y25gk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_mkf8s")
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.5, 0.2)
+texture = ExtResource("2_oduel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mkf8s")
@@ -26,4 +27,9 @@ shape = SubResource("RectangleShape2D_mkf8s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_y25gk")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
