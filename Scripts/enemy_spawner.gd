@@ -111,6 +111,7 @@ func _spawn_batch(wave_id: int, scene: PackedScene, count: int) -> void:
 
 		enemy.set_meta("wave_id", wave_id)
 		enemy.add_to_group("enemies")
+		enemy.health *= (current_zone_index + 1)
 
 		var info = _waves[wave_id]
 		info.alive += 1

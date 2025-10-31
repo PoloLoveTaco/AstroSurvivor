@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://crjvq200hl46w"]
+[gd_scene load_steps=7 format=3 uid="uid://crjvq200hl46w"]
 
 [ext_resource type="Script" uid="uid://dlbsv1xl8hyea" path="res://Scripts/Enemies/normal_enemy.gd" id="1_tnwmr"]
-[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/damage_popup.tscn" id="2_c62eb"]
-[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://scenes/xp.tscn" id="3_6wbae"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://Scenes/damage_popup.tscn" id="2_c62eb"]
+[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://Scenes/xp.tscn" id="3_6wbae"]
 [ext_resource type="Texture2D" uid="uid://b2mmthrn3pjn" path="res://Assets/Ennemies/Nautolan/Designs - Base/PNGs/Nautolan Ship - Support - Base.png" id="3_s4irp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
 size = Vector2(34, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejvqe"]
+radius = 12.5025
 
 [node name="NormalEnemy" type="RigidBody2D" groups=["Enemy"]]
 mass = 30.0
@@ -24,3 +27,13 @@ texture = ExtResource("3_s4irp")
 position = Vector2(2, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_614tr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ejvqe")
