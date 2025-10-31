@@ -23,8 +23,7 @@ func _ready() -> void:
 		pool_scripts[0].new(Upgrade.RARITY.LEGENDARY, 0.3, player),
 	]
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		var ui = upgrade_ui.instantiate()
-		get_tree().current_scene.get_node("CanvasLayer").add_child(ui)
-		ui.set_upgrades()
+func run():
+	var ui = upgrade_ui.instantiate()
+	get_tree().current_scene.get_node("CanvasLayer").add_child(ui)
+	ui.set_upgrades()

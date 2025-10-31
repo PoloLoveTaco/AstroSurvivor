@@ -75,14 +75,15 @@ func update_life_bar() -> void:
 
 #region xp management
 
-func get_xp(ammount: float):
-	xp = xp + ammount
+func get_xp(amount: float):
+	xp = xp + amount
 	if xp >= max_xp:
 		level_up()
 		xp = xp - max_xp
 		max_xp = max_xp + 10
 
 func level_up():
+	UpgradeManager.run()
 	print("wahouuuu lvl up")
 
 #endregion
