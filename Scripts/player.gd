@@ -16,7 +16,13 @@ const BULLET = preload("res://Scenes/bullet.tscn")
 @onready var xp_bar: ProgressBar = $CanvasLayer/UI/XpBar
 @onready var shooting_timer: Timer = $"Shooting Timer"
 
-@export var nb_proj = 10
+@export var bullet_speed = 400
+
+@export var nb_proj: int = 1
+@export var cone_angle_deg: float = 30.0
+@export var muzzle_offset: float = 12.0
+@export var jitter_deg: float = 0.0
+
 
 func _ready() -> void:
 	health_bar.max_value = max_health
@@ -38,17 +44,38 @@ func _physics_process(_delta):
 
 #region shooting
 
-func shoot():
+func shoot_cone_facing() -> void:
+	var forward := Vector2.RIGHT.rotated(global_rotation)
+	_shoot_cone_from_forward(forward)
+
+
+func _shoot_cone_from_forward(forward: Vector2) -> void:
+	var count = max(1, nb_proj)
+	var half := deg_to_rad(clamp(cone_angle_deg, 0.0, 179.0)) * 0.5
+	var spawn := global_position + forward * muzzle_offset
+
+	if count == 1:
+		_spawn_bullet(spawn, forward)
+		return
+
+	for i in range(count):
+		var t := i / float(count - 1)
+		var base_angle = lerp(-half, half, t) 
+		var jitter := deg_to_rad(jitter_deg) * (randf() * 2.0 - 1.0)
+		var dir := forward.rotated(base_angle + jitter)
+		_spawn_bullet(spawn, dir)
+
+func _spawn_bullet(spawn_pos: Vector2, dir: Vector2) -> void:
 	var b = BULLET.instantiate()
-	b.global_position = global_position
-	b.velocity = (get_global_mouse_position() - global_position).normalized() * b.speed
-	b.look_at(get_global_mouse_position())
+	b.global_position = spawn_pos
+	b.velocity = dir.normalized() * bullet_speed
+	b.look_at(spawn_pos + dir * 10.0)
 	get_tree().current_scene.add_child(b)
 
-
 func _on_shooting_timer_timeout() -> void:
-	shoot()
+	shoot_cone_facing()
 	shooting_timer.start()
+
 
 #endregion
 
