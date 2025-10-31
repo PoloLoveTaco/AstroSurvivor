@@ -52,6 +52,8 @@ texture = ExtResource("2_cvnsp")
 shape = SubResource("RectangleShape2D_u8vuu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 
 [node name="Shooting Timer" type="Timer" parent="."]
 wait_time = 0.5
