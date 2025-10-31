@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://biau0cpxxgby6"]
 
 [ext_resource type="Script" uid="uid://1ne80g5fmfma" path="res://Scripts/Enemies/cruiser_enemy.gd" id="1_57jn1"]
-[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://Scenes/damage_popup.tscn" id="2_nkxxi"]
-[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://Scenes/xp.tscn" id="3_0w862"]
-[ext_resource type="Texture2D" uid="uid://c8lhac3xv17qc" path="res://Assets/enemy.png" id="4_0w862"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/damage_popup.tscn" id="2_nkxxi"]
+[ext_resource type="Texture2D" uid="uid://cu7301vy01vq2" path="res://Assets/Foozle_2DS0014_Void_EnemyFleet_3/Nautolan/Designs - Base/PNGs/Nautolan Ship - Dreadnought - Base.png" id="3_at3q8"]
+[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://scenes/xp.tscn" id="3_kvafr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
-size = Vector2(32, 32)
+size = Vector2(72, 97)
 
 [node name="CruiserEnemy" type="RigidBody2D" groups=["Enemy"]]
 mass = 30.0
@@ -16,15 +16,13 @@ health = 50.0
 speed = 80.0
 damage = 10.0
 damage_popup_scene = ExtResource("2_nkxxi")
-xp_scene = ExtResource("3_0w862")
+xp_scene = ExtResource("3_kvafr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.4652934, 0.8988092, 0.9999997, 0.96862745)
-texture = ExtResource("4_0w862")
+scale = Vector2(2, 2)
+texture = ExtResource("3_at3q8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_614tr")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-texture = ExtResource("4_0w862")
-texture_scale = 1.5

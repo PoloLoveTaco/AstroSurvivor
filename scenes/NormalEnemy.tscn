@@ -1,26 +1,26 @@
 [gd_scene load_steps=6 format=3 uid="uid://crjvq200hl46w"]
 
 [ext_resource type="Script" uid="uid://dlbsv1xl8hyea" path="res://Scripts/Enemies/normal_enemy.gd" id="1_tnwmr"]
-[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://Scenes/damage_popup.tscn" id="2_c62eb"]
-[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://Scenes/xp.tscn" id="3_ejvqe"]
-[ext_resource type="Texture2D" uid="uid://c8lhac3xv17qc" path="res://Assets/enemy.png" id="4_ejvqe"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/damage_popup.tscn" id="2_c62eb"]
+[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://scenes/xp.tscn" id="3_6wbae"]
+[ext_resource type="Texture2D" uid="uid://b2mmthrn3pjn" path="res://Assets/Foozle_2DS0014_Void_EnemyFleet_3/Nautolan/Designs - Base/PNGs/Nautolan Ship - Support - Base.png" id="3_s4irp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
-size = Vector2(32, 32)
+size = Vector2(34, 32)
 
 [node name="NormalEnemy" type="RigidBody2D" groups=["Enemy"]]
 mass = 30.0
 gravity_scale = 0.0
 script = ExtResource("1_tnwmr")
 damage_popup_scene = ExtResource("2_c62eb")
-xp_scene = ExtResource("3_ejvqe")
+xp_scene = ExtResource("3_6wbae")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0, 0.96862745)
-texture = ExtResource("4_ejvqe")
-
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
-texture = ExtResource("4_ejvqe")
+rotation = 1.5707964
+scale = Vector2(2, 2)
+texture = ExtResource("3_s4irp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_614tr")
