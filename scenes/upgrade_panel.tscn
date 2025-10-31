@@ -1,14 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://cifdxaidofltg"]
+[gd_scene load_steps=8 format=3 uid="uid://dtq8ecyqf4oug"]
 
 [ext_resource type="Script" uid="uid://07nblf3a4jcq" path="res://Scripts/Upgrades/upgrade_panel.gd" id="1_gersm"]
 [ext_resource type="Texture2D" uid="uid://ca5vysmpmgspt" path="res://icon.svg" id="1_lev6e"]
+[ext_resource type="Shader" uid="uid://rat80rvydcla" path="res://Shaders/spining_lines.gdshader" id="2_8kbbg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8kbbg"]
+shader = ExtResource("2_8kbbg")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/stripes = 24
+shader_parameter/speed = 0.30000000447036
+shader_parameter/direction = 1
+shader_parameter/stripe_colors = PackedColorArray(0, 0.899768, 0.81697303, 1, 0.18, 0.5079999, 1, 0, 0.9878457, 0.62131655, 0.39577827, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/color_count = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lev6e"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
+bg_color = Color(0.1, 0.1, 0.1, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -48,6 +58,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gersm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8kbbg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
