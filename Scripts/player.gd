@@ -34,6 +34,8 @@ func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 
+#region shooting
+
 func shoot():
 	var b = BULLET.instantiate()
 	b.global_position = global_position
@@ -44,6 +46,10 @@ func shoot():
 func _on_shooting_timer_timeout() -> void:
 	shoot()
 	shooting_timer.start()
+
+#endregion
+
+#region health management
 
 func take_damage(amount: float):
 	health -= amount
@@ -63,3 +69,19 @@ func update_life_bar() -> void:
 	else:
 		fill.bg_color = Color(1.0, 0.496, 0.451)
 	health_bar.add_theme_stylebox_override("fill", fill)
+
+#endregion
+
+#region xp management
+
+func get_xp(ammount: float):
+	xp = xp + ammount
+	if xp >= max_xp:
+		level_up()
+		xp = xp - max_xp
+		max_xp = max_xp + 10
+
+func level_up():
+	print("wahouuuu lvl up")
+
+#endregion
