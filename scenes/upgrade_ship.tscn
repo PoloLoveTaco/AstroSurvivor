@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsiusdgv4glyo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xr1wp"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_detail = 5
+
+[node name="UpgradeShip" type="CanvasLayer"]
+
+[node name="Shop" type="Panel" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1368.0
+offset_top = -305.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xr1wp")
+
+[node name="Label" type="Label" parent="Shop"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Shop"
+horizontal_alignment = 1
+
+[node name="Ship" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -408.0
+offset_right = 408.0
+offset_bottom = 736.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xr1wp")
+
+[node name="Label" type="Label" parent="Ship"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Your ship"
+horizontal_alignment = 1
+
+[node name="Stats" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -510.0
+offset_bottom = 736.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xr1wp")
+
+[node name="Label" type="Label" parent="Stats"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Stats"
+horizontal_alignment = 1
+
+[node name="Inventory" type="Panel" parent="."]
+offset_right = 501.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xr1wp")
+
+[node name="Label" type="Label" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Your inventory"
+horizontal_alignment = 1
