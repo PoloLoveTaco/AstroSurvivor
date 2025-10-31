@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://7brapxhwtppo" path="res://Scripts/Enemies/scout_enemy.gd" id="1_qeg1l"]
 [ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/damage_popup.tscn" id="2_wlj0x"]
 [ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://scenes/xp.tscn" id="3_li1tb"]
-[ext_resource type="Texture2D" uid="uid://b0k0sg4h6a8xw" path="res://Assets/Foozle_2DS0014_Void_EnemyFleet_3/Nautolan/Designs - Base/PNGs/Nautolan Ship - Fighter - Base.png" id="3_ptqu6"]
+[ext_resource type="Texture2D" uid="uid://b0k0sg4h6a8xw" path="res://Assets/Ennemies/Nautolan/Designs - Base/PNGs/Nautolan Ship - Fighter - Base.png" id="3_ptqu6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
 size = Vector2(32, 32)

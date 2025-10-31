@@ -110,6 +110,8 @@ func get_xp(amount: float):
 		level_up()
 		xp = xp - max_xp
 		max_xp = max_xp + 10
+	xp_bar.max_value = max_xp
+	xp_bar.value = xp
 
 func level_up():
 	UpgradeManager.run()
