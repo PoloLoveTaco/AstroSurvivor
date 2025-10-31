@@ -15,6 +15,7 @@ class_name Enemy
 @export var xp_scene: PackedScene
 
 var _target
+var _dead := false
 
 func _ready() -> void:
 	_target = get_tree().get_nodes_in_group("Player")[0]
@@ -24,15 +25,25 @@ func _physics_process(delta: float) -> void:
 		look_at(_target.global_position)
 		position = position.move_toward(_target.global_position, speed * delta)
 
-func take_damage(amount: float):
+
+func take_damage(amount: float) -> void:
 	health -= amount
-	_spawn_damage_popup(amount)
-	if health <= 0:
-		var xp = xp_scene.instantiate()
-		xp.value = xp_value
-		xp.global_position = global_position
-		get_tree().current_scene.add_child(xp)
-		queue_free()
+	call_deferred("_spawn_damage_popup", amount)
+
+	if health <= 0 and not _dead:
+		_dead = true
+		call_deferred("_drop_xp_and_die")
+
+func _drop_xp_and_die() -> void:
+	if not is_inside_tree():
+		return
+
+	var xp = xp_scene.instantiate()
+	xp.value = xp_value
+	xp.global_position = global_position
+	get_tree().current_scene.add_child(xp)
+	queue_free()
+
 
 func _spawn_damage_popup(amount: float) -> void:
 	if damage_popup_scene == null:

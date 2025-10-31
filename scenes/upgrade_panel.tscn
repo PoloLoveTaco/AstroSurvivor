@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://07nblf3a4jcq" path="res://Scripts/Upgrades/upgrade_panel.gd" id="1_gersm"]
 [ext_resource type="Texture2D" uid="uid://ca5vysmpmgspt" path="res://icon.svg" id="1_lev6e"]
-[ext_resource type="Shader" uid="uid://rat80rvydcla" path="res://Shaders/spining_lines.gdshader" id="2_8kbbg"]
+[ext_resource type="Shader" path="res://Shaders/spining_lines.gdshader" id="2_8kbbg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8kbbg"]
 shader = ExtResource("2_8kbbg")

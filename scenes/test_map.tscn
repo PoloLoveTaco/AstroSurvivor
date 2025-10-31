@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b8kofflg7w03l"]
+[gd_scene load_steps=26 format=4 uid="uid://b8kofflg7w03l"]
 
 [ext_resource type="PackedScene" uid="uid://la12skvujt13" path="res://Scenes/player.tscn" id="1_6ulkd"]
 [ext_resource type="Script" uid="uid://dga0eclw7g0pl" path="res://Scripts/test_map.gd" id="1_bdpbv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b2prupq5kb6w4" path="res://Ressources/wave_data.gd" id="6_kr5nf"]
 [ext_resource type="Resource" uid="uid://cj6jv3yipgcta" path="res://Ressources/easy_wave.tres" id="7_7e7ot"]
 [ext_resource type="Resource" uid="uid://cbvweicjjfw64" path="res://Ressources/normal_wave.tres" id="7_wc3g0"]
+[ext_resource type="Texture2D" uid="uid://bschi7acrklh4" path="res://Assets/background.png" id="9_v78cv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kddbv"]
 texture = ExtResource("3_57l66")
@@ -140,4 +141,12 @@ text = "Wave: 1/2"
 visible = false
 color = Color(0.38170326, 0.38170323, 0.38170323, 1)
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Parallax2D" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(2, 2)
+texture = ExtResource("9_v78cv")

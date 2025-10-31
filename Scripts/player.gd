@@ -16,6 +16,8 @@ const BULLET = preload("res://Scenes/bullet.tscn")
 @onready var xp_bar: ProgressBar = $CanvasLayer/UI/XpBar
 @onready var shooting_timer: Timer = $"Shooting Timer"
 
+@export var nb_proj = 10
+
 func _ready() -> void:
 	health_bar.max_value = max_health
 	health_bar.value = health
