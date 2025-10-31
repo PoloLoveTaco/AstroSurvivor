@@ -40,7 +40,12 @@ func shoot():
 	b.look_at(get_global_mouse_position())
 	get_tree().current_scene.add_child(b)
 
-
 func _on_shooting_timer_timeout() -> void:
 	shoot()
 	shooting_timer.start()
+
+func take_damage(amount: float):
+	health -= amount
+	health_bar.value = health
+	if health <= 0:
+		queue_free()

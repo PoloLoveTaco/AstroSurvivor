@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmfh1imb32ewl"]
+[gd_scene load_steps=6 format=3 uid="uid://dmfh1imb32ewl"]
 
 [ext_resource type="Script" uid="uid://7brapxhwtppo" path="res://Scripts/Enemies/scout_enemy.gd" id="1_qeg1l"]
 [ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_qeg1l"]
-[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://Scenes/damage_popup.tscn" id="2_wlj0x"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/damage_popup.tscn" id="2_wlj0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
 size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptqu6"]
+radius = 29.0
 
 [node name="ScoutEnemy" type="RigidBody2D" groups=["Enemy"]]
 mass = 30.0
@@ -21,3 +24,15 @@ texture = ExtResource("2_qeg1l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_614tr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ptqu6")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
