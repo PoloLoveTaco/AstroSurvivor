@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://la12skvujt13"]
+[gd_scene load_steps=9 format=3 uid="uid://la12skvujt13"]
 
 [ext_resource type="Script" uid="uid://c64qrqd1wejpr" path="res://Scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_cvnsp"]
@@ -41,6 +41,9 @@ content_margin_right = 2.0
 content_margin_bottom = 2.0
 bg_color = Color(0, 1, 1, 1)
 corner_detail = 6
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+radius = 177.02542
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_g2els")
@@ -91,4 +94,10 @@ theme_override_styles/background = SubResource("StyleBoxFlat_dqkch")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qlg0r")
 show_percentage = false
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_cvnsp")
+
 [connection signal="timeout" from="Shooting Timer" to="." method="_on_shooting_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

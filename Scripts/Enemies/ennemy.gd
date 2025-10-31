@@ -5,12 +5,14 @@ class_name Enemy
 @export var health: float = 10
 @export var speed: float = 100
 @export var damage: float = 5
+@export var xp_value: float = 10
 
 @export_category("Max stats")
 @export var max_health: float = 10
 
 @export_category("Others")
 @export var damage_popup_scene: PackedScene
+@export var xp_scene: PackedScene
 
 var _target
 
@@ -26,6 +28,10 @@ func take_damage(amount: float):
 	health -= amount
 	_spawn_damage_popup(amount)
 	if health <= 0:
+		var xp = xp_scene.instantiate()
+		xp.value = xp_value
+		xp.global_position = global_position
+		get_tree().current_scene.add_child(xp)
 		queue_free()
 
 func _spawn_damage_popup(amount: float) -> void:

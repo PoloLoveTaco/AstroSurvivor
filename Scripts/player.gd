@@ -87,3 +87,9 @@ func level_up():
 	print("wahouuuu lvl up")
 
 #endregion
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var body = area.get_parent()
+	if body.is_in_group("Collectable"):
+		body.do(self)
