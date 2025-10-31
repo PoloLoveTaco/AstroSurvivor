@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://la12skvujt13"]
 
 [ext_resource type="Script" uid="uid://c64qrqd1wejpr" path="res://Scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://dihehvx6a66e2" path="res://Assets/tmp.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dimr6e3blr8j5" path="res://Assets/Ship/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(32, 32)
@@ -49,9 +49,12 @@ radius = 177.02542
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_cvnsp")
+rotation = 1.5707964
+scale = Vector2(2, 2)
+texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_u8vuu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
