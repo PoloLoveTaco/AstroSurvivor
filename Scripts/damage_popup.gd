@@ -20,7 +20,7 @@ func _ready() -> void:
 	_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	_label.scale = Vector2.ONE * (2 * scale_mult)
 	_label.add_theme_font_override("font", font)
-	z_index = 9999
+	z_index = 1000
 	z_as_relative = false
 
 	# petit décalage latéral aléatoire

@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource("1_2nlk6")
 nb_scout_enemy = 3
-nb_cruiser_enemy = 3
 wave_time_max = 1.0
 metadata/_custom_type_script = "uid://b2prupq5kb6w4"

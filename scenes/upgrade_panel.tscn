@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtq8ecyqf4oug"]
+[gd_scene load_steps=5 format=3 uid="uid://cifdxaidofltg"]
 
 [ext_resource type="Texture2D" uid="uid://ca5vysmpmgspt" path="res://icon.svg" id="1_lev6e"]
 
@@ -65,7 +65,7 @@ offset_right = 75.0
 offset_bottom = 95.000046
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
-text = "UPGRADE"
+text = "LEVEL UP"
 horizontal_alignment = 1
 
 [node name="Upgrades" type="VBoxContainer" parent="Panel"]
