@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmfh1imb32ewl"]
 
-[ext_resource type="Script" uid="uid://7brapxhwtppo" path="res://Scripts/Enemies/scout_enemy.gd" id="1_qeg1l"]
-[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/damage_popup.tscn" id="2_wlj0x"]
-[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://scenes/xp.tscn" id="3_li1tb"]
-[ext_resource type="Texture2D" uid="uid://b0k0sg4h6a8xw" path="res://Assets/Ennemies/Nautolan/Designs - Base/PNGs/Nautolan Ship - Fighter - Base.png" id="3_ptqu6"]
-[ext_resource type="PackedScene" uid="uid://ckot4pxoobv7f" path="res://scenes/death_particle.tscn" id="4_mmgqs"]
+[ext_resource type="Script" uid="uid://7brapxhwtppo" path="res://Scripts/Enemies/scout_enemy.gd" id="1_4pbk2"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/SFX/damage_popup.tscn" id="2_ph6c6"]
+[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://scenes/SFX/xp.tscn" id="3_do7cj"]
+[ext_resource type="PackedScene" uid="uid://ckot4pxoobv7f" path="res://scenes/SFX/death_particle.tscn" id="4_fkasr"]
+[ext_resource type="Texture2D" uid="uid://b0k0sg4h6a8xw" path="res://Assets/Ennemies/Nautolan/Designs - Base/PNGs/Nautolan Ship - Fighter - Base.png" id="5_yr47y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_614tr"]
 size = Vector2(32, 32)
@@ -15,19 +15,20 @@ radius = 12.5025
 [node name="ScoutEnemy" type="RigidBody2D" groups=["Enemy"]]
 mass = 30.0
 gravity_scale = 0.0
-script = ExtResource("1_qeg1l")
+script = ExtResource("1_4pbk2")
 health = 5.0
 speed = 150.0
-damage_popup_scene = ExtResource("2_wlj0x")
-xp_scene = ExtResource("3_li1tb")
-deathParticle = ExtResource("4_mmgqs")
+damage_popup_scene = ExtResource("2_ph6c6")
+xp_scene = ExtResource("3_do7cj")
+deathParticle = ExtResource("4_fkasr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5707964
 scale = Vector2(2, 2)
-texture = ExtResource("3_ptqu6")
+texture = ExtResource("5_yr47y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_614tr")
 
@@ -38,6 +39,7 @@ wait_time = 0.5
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_ptqu6")
 

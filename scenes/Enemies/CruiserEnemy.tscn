@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://biau0cpxxgby6"]
 
 [ext_resource type="Script" uid="uid://1ne80g5fmfma" path="res://Scripts/Enemies/cruiser_enemy.gd" id="1_57jn1"]
-[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/damage_popup.tscn" id="2_nkxxi"]
+[ext_resource type="PackedScene" uid="uid://c42lfqmk810gn" path="res://scenes/SFX/damage_popup.tscn" id="2_nkxxi"]
 [ext_resource type="Texture2D" uid="uid://cu7301vy01vq2" path="res://Assets/Ennemies/Nautolan/Designs - Base/PNGs/Nautolan Ship - Dreadnought - Base.png" id="3_at3q8"]
-[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://scenes/xp.tscn" id="3_kvafr"]
-[ext_resource type="PackedScene" uid="uid://ckot4pxoobv7f" path="res://scenes/death_particle.tscn" id="4_s7q0f"]
+[ext_resource type="PackedScene" uid="uid://bpc8aofva4cdn" path="res://scenes/SFX/xp.tscn" id="3_kvafr"]
+[ext_resource type="PackedScene" uid="uid://ckot4pxoobv7f" path="res://scenes/SFX/death_particle.tscn" id="4_s7q0f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0w862"]
 radius = 19.5

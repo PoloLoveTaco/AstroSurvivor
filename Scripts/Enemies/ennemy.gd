@@ -15,6 +15,11 @@ class_name Enemy
 @export var xp_scene: PackedScene
 @export var deathParticle: PackedScene
 
+@onready var timer: Timer = $Timer
+
+var player: CharacterBody2D
+var is_player_in_range: bool = false
+var is_attack_good: bool = true
 var _target
 var _dead := false
 
@@ -26,6 +31,11 @@ func _physics_process(delta: float) -> void:
 		look_at(_target.global_position)
 		position = position.move_toward(_target.global_position, speed * delta)
 
+func _process(_delta: float) -> void:
+	if is_player_in_range and is_attack_good:
+		player.take_damage(damage)
+		is_attack_good = false
+		timer.start()
 
 func take_damage(amount: float) -> void:
 	health -= amount
@@ -53,7 +63,6 @@ func explode():
 	_particle.emitting = true
 	get_tree().current_scene.add_child(_particle)
 
-
 func _spawn_damage_popup(amount: float) -> void:
 	if damage_popup_scene == null:
 		return
@@ -64,17 +73,7 @@ func _spawn_damage_popup(amount: float) -> void:
 
 	get_parent().add_child(p)
 
-@onready var timer: Timer = $Timer
-
-var player: CharacterBody2D
-var is_player_in_range: bool = false
-var is_attack_good: bool = true
-
-func _process(_delta: float) -> void:
-	if is_player_in_range and is_attack_good:
-		player.take_damage(damage)
-		is_attack_good = false
-		timer.start()
+#region signals
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -88,3 +87,5 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	is_attack_good = true
+
+#endregion

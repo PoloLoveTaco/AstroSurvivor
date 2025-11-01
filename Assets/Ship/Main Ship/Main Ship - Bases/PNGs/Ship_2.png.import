@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xqjb75o8w0p6"
-path="res://.godot/imported/Main Ship - Base - Slight damage.png-231c522328b1b89f583ce81b03e9854b.ctex"
+uid="uid://ckl6b3yjxy3gh"
+path="res://.godot/imported/Ship_2.png-5403c2ae0fd0513f63a15b89bcabfcf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ship/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Slight damage.png"
-dest_files=["res://.godot/imported/Main Ship - Base - Slight damage.png-231c522328b1b89f583ce81b03e9854b.ctex"]
+source_file="res://Assets/Ship/Main Ship/Main Ship - Bases/PNGs/Ship_2.png"
+dest_files=["res://.godot/imported/Ship_2.png-5403c2ae0fd0513f63a15b89bcabfcf3.ctex"]
 
 [params]
 

@@ -4,7 +4,7 @@ extends Node
 @export var upgrades: Array[Upgrade]
 @export var player: CharacterBody2D
 
-@onready var upgrade_ui: PackedScene = preload("res://Scenes/upgrade_panel.tscn")
+@onready var upgrade_ui: PackedScene = preload("res://Scenes/Menus/upgrade_panel.tscn")
 
 func _ready() -> void:
 	

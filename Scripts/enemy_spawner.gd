@@ -3,9 +3,9 @@ extends Node2D
 @export_category("General")
 @export var min_spawn_distance: float = 2500.0
 @export var max_spawn_distance: float = 3000.0
-@export var normal_enemy: PackedScene = preload("res://Scenes/NormalEnemy.tscn")
-@export var scout_enemy: PackedScene = preload("res://Scenes/ScoutEnemy.tscn")
-@export var cruiser_enemy: PackedScene = preload("res://Scenes/CruiserEnemy.tscn")
+@export var normal_enemy: PackedScene = preload("res://scenes/Enemies/NormalEnemy.tscn")
+@export var scout_enemy: PackedScene = preload("res://scenes/Enemies/ScoutEnemy.tscn")
+@export var cruiser_enemy: PackedScene = preload("res://scenes/Enemies/CruiserEnemy.tscn")
 
 @export_category("Zones")
 @export var zones: Array[ZoneData]
