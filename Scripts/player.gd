@@ -15,6 +15,7 @@ const BULLET = preload("res://Scenes/bullet.tscn")
 @onready var health_bar: ProgressBar = $CanvasLayer/UI/HealthBar
 @onready var xp_bar: ProgressBar = $CanvasLayer/UI/XpBar
 @onready var shooting_timer: Timer = $"Shooting Timer"
+@onready var camera_2d: Camera2D = $Camera2D
 
 @export var bullet_speed = 400
 
@@ -84,6 +85,7 @@ func _on_shooting_timer_timeout() -> void:
 func take_damage(amount: float):
 	health -= amount
 	health_bar.value = health
+	camera_2d.start_shake(5, 0.2)
 	update_life_bar()
 	if health <= 0:
 		queue_free()

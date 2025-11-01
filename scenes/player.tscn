@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://la12skvujt13"]
+[gd_scene load_steps=10 format=3 uid="uid://la12skvujt13"]
 
 [ext_resource type="Script" uid="uid://c64qrqd1wejpr" path="res://Scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dimr6e3blr8j5" path="res://Assets/Ship/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://673tg8elpkn1" path="res://Scripts/camera_player.gd" id="3_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(32, 32)
@@ -60,6 +61,7 @@ shape = SubResource("RectangleShape2D_u8vuu")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+script = ExtResource("3_qhqgy")
 
 [node name="Shooting Timer" type="Timer" parent="."]
 wait_time = 0.5
