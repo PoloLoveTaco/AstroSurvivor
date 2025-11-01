@@ -7,6 +7,7 @@ const BULLET = preload("res://Scenes/bullet.tscn")
 @export var speed: float = 400
 @export var xp: float = 0
 @export var seconds_between_attacks: float = 1
+@export var level: int = 1
 
 @export_category("Max stats")
 @export var max_health: float = 100
@@ -16,6 +17,7 @@ const BULLET = preload("res://Scenes/bullet.tscn")
 @onready var xp_bar: ProgressBar = $CanvasLayer/UI/XpBar
 @onready var shooting_timer: Timer = $"Shooting Timer"
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var level_label: Label = $CanvasLayer/UI/LevelLabel
 
 @export var bullet_speed = 400
 
@@ -31,6 +33,7 @@ func _ready() -> void:
 	update_life_bar()
 	xp_bar.max_value = max_xp
 	xp_bar.value = xp
+	level_label.text = "Level " + str(level)
 	shooting_timer.wait_time = seconds_between_attacks
 	shooting_timer.start()
 
@@ -48,7 +51,6 @@ func _physics_process(_delta):
 func shoot_cone_facing() -> void:
 	var forward := Vector2.RIGHT.rotated(global_rotation)
 	_shoot_cone_from_forward(forward)
-
 
 func _shoot_cone_from_forward(forward: Vector2) -> void:
 	var count = max(1, nb_proj)
@@ -110,6 +112,8 @@ func get_xp(amount: float):
 	xp = xp + amount
 	if xp >= max_xp:
 		level_up()
+		level_label.text = "Level " + str(level)
+		level = level + 1
 		xp = xp - max_xp
 		max_xp = max_xp + 10
 	xp_bar.max_value = max_xp
@@ -117,7 +121,6 @@ func get_xp(amount: float):
 
 func level_up():
 	UpgradeManager.run()
-	print("wahouuuu lvl up")
 
 #endregion
 

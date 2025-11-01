@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://b8kofflg7w03l"]
+[gd_scene load_steps=28 format=4 uid="uid://b8kofflg7w03l"]
 
-[ext_resource type="PackedScene" uid="uid://la12skvujt13" path="res://Scenes/player.tscn" id="1_6ulkd"]
+[ext_resource type="PackedScene" uid="uid://la12skvujt13" path="res://scenes/player.tscn" id="1_6ulkd"]
 [ext_resource type="Script" uid="uid://dga0eclw7g0pl" path="res://Scripts/test_map.gd" id="1_bdpbv"]
 [ext_resource type="Texture2D" uid="uid://dk4gf0yvg0jml" path="res://Assets/space_001.png" id="3_57l66"]
 [ext_resource type="Script" uid="uid://x3avyum83o50" path="res://Scripts/enemy_spawner.gd" id="4_gbc2j"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://b2prupq5kb6w4" path="res://Ressources/wave_data.gd" id="6_kr5nf"]
 [ext_resource type="Resource" uid="uid://cj6jv3yipgcta" path="res://Ressources/easy_wave.tres" id="7_7e7ot"]
 [ext_resource type="Resource" uid="uid://cbvweicjjfw64" path="res://Ressources/normal_wave.tres" id="7_wc3g0"]
-[ext_resource type="Script" path="res://Scripts/parallax.gd" id="9_u56q5"]
+[ext_resource type="Script" uid="uid://c2pafryg6wrxf" path="res://Scripts/parallax.gd" id="9_u56q5"]
 [ext_resource type="Texture2D" uid="uid://drpnr4br3jl5e" path="res://Assets/Space Background.png" id="10_u56q5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kddbv"]
@@ -97,6 +97,17 @@ script = ExtResource("5_leqta")
 waves = Array[ExtResource("6_kr5nf")]([ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0"), ExtResource("7_wc3g0")])
 metadata/_custom_type_script = "uid://bt54pkxigyp24"
 
+[sub_resource type="Environment" id="Environment_u56q5"]
+background_mode = 3
+tonemap_mode = 3
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/4 = 1.0
+glow_levels/6 = 1.0
+glow_levels/7 = 1.0
+glow_blend_mode = 1
+
 [node name="Test Map" type="Node2D"]
 script = ExtResource("1_bdpbv")
 
@@ -153,3 +164,6 @@ texture_filter = 1
 texture_repeat = 2
 scale = Vector2(2, 2)
 texture = ExtResource("10_u56q5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u56q5")

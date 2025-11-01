@@ -13,6 +13,7 @@ class_name Enemy
 @export_category("Others")
 @export var damage_popup_scene: PackedScene
 @export var xp_scene: PackedScene
+@export var deathParticle: PackedScene
 
 var _target
 var _dead := false
@@ -42,7 +43,15 @@ func _drop_xp_and_die() -> void:
 	xp.value = xp_value
 	xp.global_position = global_position
 	get_tree().current_scene.add_child(xp)
+	explode()
 	queue_free()
+
+func explode():
+	var _particle = deathParticle.instantiate()
+	_particle.position = global_position
+	_particle.rotation = global_rotation
+	_particle.emitting = true
+	get_tree().current_scene.add_child(_particle)
 
 
 func _spawn_damage_popup(amount: float) -> void:
